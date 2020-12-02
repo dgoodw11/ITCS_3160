@@ -6,6 +6,7 @@ Project Description: ...
 
 
 Use Case for Rating System:
+
 ![rating-use-case.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/rating-use-case.png)
 
 
