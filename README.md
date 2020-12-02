@@ -1,9 +1,8 @@
 # ITCS_3160
 
-Introduction:
-  Team 29: Dakota Goodwin
+Team 29: Dakota Goodwin
   
-  Project Description: ...
+Project Description: ...
 
 
 Use Case for Rating System:
