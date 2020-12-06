@@ -2,7 +2,8 @@
 
 Team 29: Dakota Goodwin
   
-Project Description: Insert a rating system for both the drivers and restaurants to the pre-exsiting database
+Project Description:
+Insert a rating system for both the drivers and restaurants to the pre-exsiting database
 
 
 Use Case for Rating System:
