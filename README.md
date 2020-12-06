@@ -15,6 +15,8 @@ Business Rules:
 
 EERD: 
 
+![eerd.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/eerd.png)
+
 
 MySQL Queries:
 
