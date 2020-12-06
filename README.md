@@ -28,7 +28,6 @@ Web/App Implementation:
 
 
 MySQL Dump:
-
 ![sql_dump.sql](sql_dump.sql)
 
 
