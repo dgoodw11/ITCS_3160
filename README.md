@@ -22,9 +22,9 @@ EERD:
 
 MySQL Queries:
 
-![driver_ratings_select.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/driver_ratings_select.png)
+![driver_ratings_select.PNG](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/driver_ratings_select.PNG)
 
-![restaurant_ratings_select.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/restaurant_ratings_select.png)
+![restaurant_ratings_select.PNG](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/restaurant_ratings_select.PNG)
 
 Stored Procedure:
 
