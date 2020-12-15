@@ -47,9 +47,9 @@ Stored procedure for calculating the given restaurant rating:
 
 
 Advanced views:
+
 ![order_details_view.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/order_details_view.png)
 ![order_details_return.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/order_details_return.png)
-
 
 
 
