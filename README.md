@@ -28,8 +28,7 @@ MySQL Queries:
 
 Stored Procedure:
 
-
-Web/App Implementation:
+this is the stored procedure
 
 
 MySQL Dump:
