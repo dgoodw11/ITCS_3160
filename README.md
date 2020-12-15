@@ -28,7 +28,7 @@ MySQL Queries:
 
 Stored Procedure:
 
-this is the stored procedure
+![]
 
 
 MySQL Dump:
