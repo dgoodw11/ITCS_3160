@@ -6,6 +6,10 @@ Dakota Goodwin
 Project Description:
 Insert a rating system for both the drivers and restaurants to the pre-exsiting database
 
+Narrative:
+
+The purpose of this project is to implement a rating system for drivers and restaurants for the provided database. This added functionality allows for customers to leave a rating for both the driver and restaurant pertaining to their order they placed. This is an important feature because the use of rating systems is very common amoungst service-based applications which allows for users to give their input on how well a service was performed.
+
 
 Use Case for Rating System:
 
