@@ -26,9 +26,13 @@ MySQL Queries:
 
 ![restaurant_ratings_select.PNG](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/restaurant_ratings_select.PNG)
 
-Stored Procedure:
+Stored procedure for calculating the given driver rating:
 
-![]
+![calc_driver_rating.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/calc_driver_rating.png)
+
+Stored procedure for calculating the given restaurant rating:
+
+![calc_restaurant_rating.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/calc_restaurant_rating.png)
 
 
 MySQL Dump:
