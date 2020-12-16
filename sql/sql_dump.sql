@@ -75,6 +75,22 @@ INSERT INTO `driver` VALUES (1,110,'fi3980','1989-01-18',4),(2,98,'js4003','2017
 UNLOCK TABLES;
 
 --
+-- Temporary view structure for view `driver_details`
+--
+
+DROP TABLE IF EXISTS `driver_details`;
+/*!50001 DROP VIEW IF EXISTS `driver_details`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `driver_details` AS SELECT 
+ 1 AS `Driver Name`,
+ 1 AS `License Number`,
+ 1 AS `Cell Number`,
+ 1 AS `Date Hired`,
+ 1 AS `Rating`*/;
+SET character_set_client = @saved_cs_client;
+
+--
 -- Table structure for table `driver_rating`
 --
 
@@ -219,6 +235,23 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Temporary view structure for view `order_details`
+--
+
+DROP TABLE IF EXISTS `order_details`;
+/*!50001 DROP VIEW IF EXISTS `order_details`*/;
+SET @saved_cs_client     = @@character_set_client;
+/*!50503 SET character_set_client = utf8mb4 */;
+/*!50001 CREATE VIEW `order_details` AS SELECT 
+ 1 AS `Order ID`,
+ 1 AS `Customer`,
+ 1 AS `Restaurant`,
+ 1 AS `Delivery Driver`,
+ 1 AS `Total Price`,
+ 1 AS `Delivery Charge`*/;
+SET character_set_client = @saved_cs_client;
 
 --
 -- Table structure for table `person`
@@ -454,6 +487,86 @@ DELIMITER ;
 /*!50003 SET character_set_client  = @saved_cs_client */ ;
 /*!50003 SET character_set_results = @saved_cs_results */ ;
 /*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `calc_driver_rating` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `calc_driver_rating`(in in_driver_id int)
+BEGIN
+SELECT driver_id, AVG(driver_rating)
+FROM driver_rating
+WHERE driver_id = in_driver_id;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+/*!50003 DROP PROCEDURE IF EXISTS `calc_restaurant_rating` */;
+/*!50003 SET @saved_cs_client      = @@character_set_client */ ;
+/*!50003 SET @saved_cs_results     = @@character_set_results */ ;
+/*!50003 SET @saved_col_connection = @@collation_connection */ ;
+/*!50003 SET character_set_client  = utf8mb4 */ ;
+/*!50003 SET character_set_results = utf8mb4 */ ;
+/*!50003 SET collation_connection  = utf8mb4_0900_ai_ci */ ;
+/*!50003 SET @saved_sql_mode       = @@sql_mode */ ;
+/*!50003 SET sql_mode              = 'STRICT_TRANS_TABLES,NO_ENGINE_SUBSTITUTION' */ ;
+DELIMITER ;;
+CREATE DEFINER=`root`@`localhost` PROCEDURE `calc_restaurant_rating`(in in_restaurant_id int)
+BEGIN
+SELECT restaurant_id, AVG(restaurant_rating)
+FROM restaurant_rating
+WHERE restaurant_id = in_restaurant_id;
+
+END ;;
+DELIMITER ;
+/*!50003 SET sql_mode              = @saved_sql_mode */ ;
+/*!50003 SET character_set_client  = @saved_cs_client */ ;
+/*!50003 SET character_set_results = @saved_cs_results */ ;
+/*!50003 SET collation_connection  = @saved_col_connection */ ;
+
+--
+-- Final view structure for view `driver_details`
+--
+
+/*!50001 DROP VIEW IF EXISTS `driver_details`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `driver_details` AS select `c`.`person_name` AS `Driver Name`,`a`.`license_number` AS `License Number`,`c`.`cell` AS `Cell Number`,`a`.`date_hired` AS `Date Hired`,`a`.`rating` AS `Rating` from ((`driver` `a` join `student` `b` on((`b`.`student_id` = `a`.`student_id`))) join `person` `c` on((`c`.`person_id` = `b`.`person_id`))) where (`a`.`rating` >= 3) order by `a`.`rating` desc,`a`.`date_hired` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
+
+--
+-- Final view structure for view `order_details`
+--
+
+/*!50001 DROP VIEW IF EXISTS `order_details`*/;
+/*!50001 SET @saved_cs_client          = @@character_set_client */;
+/*!50001 SET @saved_cs_results         = @@character_set_results */;
+/*!50001 SET @saved_col_connection     = @@collation_connection */;
+/*!50001 SET character_set_client      = utf8mb4 */;
+/*!50001 SET character_set_results     = utf8mb4 */;
+/*!50001 SET collation_connection      = utf8mb4_0900_ai_ci */;
+/*!50001 CREATE ALGORITHM=UNDEFINED */
+/*!50013 DEFINER=`root`@`localhost` SQL SECURITY DEFINER */
+/*!50001 VIEW `order_details` AS select `a`.`order_id` AS `Order ID`,`b`.`person_name` AS `Customer`,`c`.`restaurant_name` AS `Restaurant`,`f`.`person_name` AS `Delivery Driver`,`a`.`total_price` AS `Total Price`,`a`.`delivery_charge` AS `Delivery Charge` from (((((`order` `a` join `person` `b` on((`b`.`person_id` = `a`.`person_id`))) join `restaurant` `c` on((`c`.`restaurant_id` = `a`.`restaurant_id`))) join `driver` `d` on((`d`.`driver_id` = `a`.`driver_id`))) join `student` `e` on((`e`.`student_id` = `d`.`student_id`))) join `person` `f` on((`f`.`person_id` = `e`.`person_id`))) order by `a`.`order_id` */;
+/*!50001 SET character_set_client      = @saved_cs_client */;
+/*!50001 SET character_set_results     = @saved_cs_results */;
+/*!50001 SET collation_connection      = @saved_col_connection */;
 
 --
 -- Final view structure for view `person_join`
@@ -500,4 +613,4 @@ DELIMITER ;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2020-12-06 18:42:59
+-- Dump completed on 2020-12-15 22:43:34
