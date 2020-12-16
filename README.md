@@ -56,6 +56,7 @@ Advanced views:
 ![driver_details_return.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/driver_details_return.png)
 
 
+
 MySQL Dump:
 ![sql_dump.sql](sql/sql_dump.sql)
 
