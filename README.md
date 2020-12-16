@@ -35,12 +35,12 @@ EERD:
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 MySQL Queries:
-
+<=========================================================================================>
 SQL query that selects driver information, including their corresponding ratings:
 
 ![driver_ratings_select.PNG](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/driver_ratings_select.PNG)
 <=========================================================================================>
-SQL query that selects driver information, including their corresponding ratings:
+SQL query that selects restaurant information, including their corresponding ratings:
 
 ![restaurant_ratings_select.PNG](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/restaurant_ratings_select.PNG)
 <=========================================================================================>
@@ -55,10 +55,13 @@ Stored procedure for calculating the given restaurant rating:
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 Advanced views:
+<=========================================================================================>
+View for order details (SQL and Return):
 
 ![order_details_view.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/order_details_view.png)
 ![order_details_return.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/order_details_return.png)
-
+<=========================================================================================>
+View for driver details (SQL and Return):
 
 ![driver_details_view.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/driver_details_view.png)
 ![driver_details_return.png](https://raw.githubusercontent.com/dgoodw11/ITCS_3160-052/main/images/driver_details_return.png)
